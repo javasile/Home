@@ -1,7 +1,7 @@
 package com.example.home2.controller;
 
 
-import com.example.home2.dto.house.AddressDto;
+import com.example.home2.dto.AddressDto;
 import com.example.home2.exception.AddressNotFoundException;
 import com.example.home2.service.AddressService;
 import io.swagger.v3.oas.annotations.Operation;

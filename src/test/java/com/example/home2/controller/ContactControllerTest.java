@@ -1,7 +1,7 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.client.ContactDto;
-import com.example.home2.model.client.Contact;
+import com.example.home2.dto.ContactDto;
+import com.example.home2.model.Contact;
 import com.example.home2.repository.ContactRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

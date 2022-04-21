@@ -1,7 +1,7 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.house.AddressDto;
-import com.example.home2.model.house.Address;
+import com.example.home2.dto.AddressDto;
+import com.example.home2.model.Address;
 import com.example.home2.repository.AddressRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

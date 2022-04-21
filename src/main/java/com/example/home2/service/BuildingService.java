@@ -1,13 +1,9 @@
 package com.example.home2.service;
 
-import com.example.home2.dto.house.AddressDto;
-import com.example.home2.dto.house.BuildingDto;
-import com.example.home2.exception.AddressNotFoundException;
+import com.example.home2.dto.BuildingDto;
 import com.example.home2.exception.BuildingNotFoundException;
 import com.example.home2.exception.InvalidUUIDException;
-import com.example.home2.mapper.AddressMapper;
 import com.example.home2.mapper.BuildingMapper;
-import com.example.home2.repository.AddressRepository;
 import com.example.home2.repository.BuildingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

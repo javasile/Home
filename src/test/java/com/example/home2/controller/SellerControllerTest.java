@@ -1,7 +1,7 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.client.SellerDto;
-import com.example.home2.model.client.Seller;
+import com.example.home2.dto.SellerDto;
+import com.example.home2.model.Seller;
 import com.example.home2.repository.SellerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,7 +39,6 @@ public class SellerControllerTest {
     @BeforeEach
     public void cleanupDatabase() {
         seller = Seller.builder()
-//                .isCompany(true)
                 .firstName("Cena")
                 .lastName("John")
                 .contactList(new ArrayList<>())
@@ -51,7 +50,7 @@ public class SellerControllerTest {
     @Test
     void testCRUD() throws Exception {
         SellerDto sellerDto = SellerDto.builder()
-//                .isCompany(true)
+                .id(seller.getId())
                 .firstName("Cena")
                 .lastName("John")
                 .contactList(new ArrayList<>())

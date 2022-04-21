@@ -1,4 +1,4 @@
-package com.example.home2.model.billing;
+package com.example.home2.model;
 
 public enum Contract {
     SALE,

@@ -1,13 +1,9 @@
 package com.example.home2.service;
 
-import com.example.home2.dto.client.CustomerDto;
-import com.example.home2.dto.client.SellerDto;
-import com.example.home2.exception.CustomerNotFoundException;
+import com.example.home2.dto.SellerDto;
 import com.example.home2.exception.InvalidUUIDException;
 import com.example.home2.exception.SellerNotFoundException;
-import com.example.home2.mapper.CustomerMapper;
 import com.example.home2.mapper.SellerMapper;
-import com.example.home2.repository.CustomerRepository;
 import com.example.home2.repository.SellerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

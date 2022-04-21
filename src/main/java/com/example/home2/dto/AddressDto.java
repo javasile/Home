@@ -1,7 +1,6 @@
-package com.example.home2.dto.house;
+package com.example.home2.dto;
 
-import com.example.home2.dto.client.SellerDto;
-import com.example.home2.model.client.Seller;
+import com.example.home2.dto.SellerDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +11,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +20,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDto {
+public class AddressDto implements Serializable {
 
     @Schema(description = "id addess", example = "74478911-6424-47a7-911c-0daa262144fa")
     private UUID id;

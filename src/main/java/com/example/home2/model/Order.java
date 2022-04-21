@@ -1,7 +1,5 @@
-package com.example.home2.model.billing;
+package com.example.home2.model;
 
-import com.example.home2.model.client.Customer;
-import com.example.home2.model.house.Building;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,7 +29,7 @@ public class Order {
     private LocalDate dateAdded;
 
     @Enumerated(EnumType.STRING)
-    private Contract contract;
+    private Category category;
 
     @ManyToOne
     private Customer customer;
@@ -39,5 +37,7 @@ public class Order {
     @ManyToOne
     private Building building;
 
+    @Column(length = 8)
+    private double commission;
 
 }

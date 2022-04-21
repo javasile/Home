@@ -1,6 +1,6 @@
 package com.example.home2.service;
 
-import com.example.home2.dto.house.AddressDto;
+import com.example.home2.dto.AddressDto;
 import com.example.home2.exception.AddressNotFoundException;
 import com.example.home2.exception.InvalidUUIDException;
 import com.example.home2.mapper.AddressMapper;

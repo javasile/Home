@@ -1,11 +1,8 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.client.CustomerDto;
-import com.example.home2.dto.client.SellerDto;
-import com.example.home2.model.client.Customer;
-import com.example.home2.model.client.Seller;
+import com.example.home2.dto.CustomerDto;
+import com.example.home2.model.Customer;
 import com.example.home2.repository.CustomerRepository;
-import com.example.home2.repository.SellerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -54,10 +50,10 @@ public class CustomerControllerTest {
     @Test
     void testCRUD() throws Exception {
         CustomerDto customerDto = CustomerDto.builder()
-//                .isCompany(true)
+                .id(customer.getId())
                 .firstName("Ionescu")
                 .lastName("Georgescu")
-                .contactList(new ArrayList<>())
+//                .contactList(new ArrayList<>())
                 .build();
         mvc.perform(get("/customer")
                         .contentType(MediaType.APPLICATION_JSON))

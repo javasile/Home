@@ -1,6 +1,6 @@
 package com.example.home2.service;
 
-import com.example.home2.dto.client.ContactDto;
+import com.example.home2.dto.ContactDto;
 import com.example.home2.exception.ContactNotFoundException;
 import com.example.home2.exception.InvalidUUIDException;
 import com.example.home2.mapper.ContactMapper;

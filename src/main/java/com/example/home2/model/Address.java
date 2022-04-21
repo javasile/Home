@@ -1,6 +1,5 @@
-package com.example.home2.model.house;
+package com.example.home2.model;
 
-import com.example.home2.model.client.Seller;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 

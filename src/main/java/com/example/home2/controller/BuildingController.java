@@ -1,6 +1,6 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.house.BuildingDto;
+import com.example.home2.dto.BuildingDto;
 import com.example.home2.exception.BuildingNotFoundException;
 import com.example.home2.service.BuildingService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("Building")
+@RequestMapping("building")
 public class BuildingController {
 
     private final BuildingService buildingService;

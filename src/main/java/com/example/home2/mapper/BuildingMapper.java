@@ -1,9 +1,7 @@
 package com.example.home2.mapper;
 
-import com.example.home2.dto.house.AddressDto;
-import com.example.home2.dto.house.BuildingDto;
-import com.example.home2.model.house.Address;
-import com.example.home2.model.house.Building;
+import com.example.home2.dto.BuildingDto;
+import com.example.home2.model.Building;
 import org.mapstruct.Mapper;
 
 import java.util.List;

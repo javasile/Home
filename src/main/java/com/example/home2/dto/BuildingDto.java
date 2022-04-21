@@ -1,6 +1,6 @@
-package com.example.home2.dto.house;
+package com.example.home2.dto;
 
-import com.example.home2.model.client.Seller;
+import com.example.home2.model.Category;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Min;
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,7 +19,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BuildingDto {
+public class BuildingDto implements Serializable {
 
     @Schema(description = "id building", example = "1c263004-6df9-4879-a3d9-9baf22ccdc18")
     private UUID id;
@@ -44,7 +45,7 @@ public class BuildingDto {
     private  Double price;
 
     @Schema(description = "building category, the value must be 0 or positive", example = "VILLA, APARTMENT, SINGLE_ROOM")
-    private  CategoryDto category;
+    private Category category;
 
     @Schema(description = "list of sellers")
     private List<AddressDto> addresses;

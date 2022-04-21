@@ -1,6 +1,6 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.client.CustomerDto;
+import com.example.home2.dto.CustomerDto;
 import com.example.home2.exception.CustomerNotFoundException;
 import com.example.home2.service.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,13 +1,9 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.client.CustomerDto;
-import com.example.home2.dto.house.BuildingDto;
-import com.example.home2.dto.house.CategoryDto;
-import com.example.home2.model.client.Customer;
-import com.example.home2.model.house.Building;
-import com.example.home2.model.house.Category;
+import com.example.home2.dto.BuildingDto;
+import com.example.home2.model.Building;
+import com.example.home2.model.Category;
 import com.example.home2.repository.BuildingRepository;
-import com.example.home2.repository.CustomerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,11 +15,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -51,7 +45,7 @@ public class BuildingControllerTest {
                     .constructionYear("1990")
                     .price(100556.56)
                     .category(Category.VILLA)
-                    .addressList(new ArrayList<>())
+                    .addressList(null)
                     .build();
             buildingRepository.deleteAll();
             building = buildingRepository.save(building);
@@ -59,13 +53,14 @@ public class BuildingControllerTest {
         @Test
         void testCRUD() throws Exception {
             BuildingDto buildingDto = BuildingDto.builder()
+                    .id(building.getId())
                     .sku("IMOBIL32223")
                     .utility("water, gas, electricity")
                     .description("close to shops, schools")
                     .constructionYear("1990")
                     .price(100556.56)
-                    .category(CategoryDto.VILLA)
-                    .addresses(new ArrayList<>())
+                    .category(Category.VILLA)
+                    .addresses(null)
                     .build();
             mvc.perform(get("/building")
                             .contentType(MediaType.APPLICATION_JSON))

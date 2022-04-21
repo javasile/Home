@@ -1,4 +1,4 @@
-package com.example.home2.dto.client;
+package com.example.home2.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Slf4j
@@ -18,7 +19,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactDto {
+public class ContactDto implements Serializable {
 
     @Schema(description = "id contact", example = "74478911-6424-47a7-911c-0daa262144ya")
     private UUID id;

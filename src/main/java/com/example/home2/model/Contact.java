@@ -1,4 +1,4 @@
-package com.example.home2.model.client;
+package com.example.home2.model;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;

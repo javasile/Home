@@ -1,6 +1,6 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.billing.OrderDto;
+import com.example.home2.dto.OrderDto;
 import com.example.home2.exception.OrderNotFoundException;
 import com.example.home2.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -80,5 +80,4 @@ public class OrderController {
     public void deleteById(@PathVariable UUID id) throws OrderNotFoundException {
         orderService.deleteById(id);
     }
-
 }

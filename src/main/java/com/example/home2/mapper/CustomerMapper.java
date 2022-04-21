@@ -1,12 +1,8 @@
 package com.example.home2.mapper;
 
-import com.example.home2.dto.client.CustomerDto;
-import com.example.home2.dto.house.AddressDto;
-import com.example.home2.model.client.Customer;
-import com.example.home2.model.house.Address;
+import com.example.home2.dto.CustomerDto;
+import com.example.home2.model.Customer;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 
 import java.util.List;
 
@@ -24,4 +20,5 @@ public interface CustomerMapper {
 //            @Mapping(source = "company",target = "isCompany")
 //    })
     Customer dtoToModel(CustomerDto customerDto);
+
 }
