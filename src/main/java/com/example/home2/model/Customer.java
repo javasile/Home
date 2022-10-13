@@ -35,7 +35,7 @@ public class Customer {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "customer_contacts",
+            name = "customer_contact",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "contact_id")
     )

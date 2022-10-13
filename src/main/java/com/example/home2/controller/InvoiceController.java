@@ -1,8 +1,8 @@
 package com.example.home2.controller;
 
-import com.example.home2.dto.OrderDto;
-import com.example.home2.exception.OrderNotFoundException;
-import com.example.home2.service.OrderService;
+import com.example.home2.dto.InvoiceDto;
+import com.example.home2.exception.InvoiceNotFoundException;
+import com.example.home2.service.InvoiceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -15,10 +15,10 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("order")
-public class OrderController {
+@RequestMapping("invoice")
+public class InvoiceController {
 
-    private final OrderService orderService;
+    private final InvoiceService invoiceService;
 
     @Operation(summary = "GET request", description = "Get all contacts")
     @ApiResponses(value = {
@@ -28,8 +28,8 @@ public class OrderController {
     }
     )
     @GetMapping
-    public List<OrderDto> findAll() {
-        return orderService.findAll();
+    public List<InvoiceDto> findAll() {
+        return invoiceService.findAll();
     }
 
     @Operation(summary = "GET request", description = "Get contact by id ")
@@ -39,9 +39,9 @@ public class OrderController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public OrderDto findById(@PathVariable UUID id) throws OrderNotFoundException {
-        return orderService.findById(id);
+    @GetMapping("/getById")
+    public InvoiceDto findById(@RequestParam("id") UUID id) throws InvoiceNotFoundException {
+        return invoiceService.findById(id);
     }
 
     @Operation(summary = "Post request", description = "Save a new contact ")
@@ -52,8 +52,8 @@ public class OrderController {
     }
     )
     @PostMapping
-    public OrderDto saveNew(@RequestBody OrderDto orderDto) {
-        return orderService.saveNew(orderDto);
+    public InvoiceDto saveNew(@RequestBody InvoiceDto invoiceDto) {
+        return invoiceService.saveNew(invoiceDto);
     }
 
     @Operation(summary = "Put request", description = "Update contact ")
@@ -64,8 +64,8 @@ public class OrderController {
     }
     )
     @PutMapping
-    public OrderDto saveExisting(@RequestBody OrderDto orderDto) throws OrderNotFoundException {
-        return orderService.saveExisting(orderDto);
+    public InvoiceDto saveExisting(@RequestBody InvoiceDto invoiceDto) throws InvoiceNotFoundException {
+        return invoiceService.saveExisting(invoiceDto);
     }
 
     @Operation(summary = "Delete request", description = "Delete contact by id ")
@@ -75,9 +75,9 @@ public class OrderController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws OrderNotFoundException {
-        orderService.deleteById(id);
+    public void deleteById(@RequestParam("id") UUID id) throws InvoiceNotFoundException {
+        invoiceService.deleteById(id);
     }
 }

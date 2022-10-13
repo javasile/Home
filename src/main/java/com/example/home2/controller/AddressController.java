@@ -39,8 +39,8 @@ public class AddressController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public AddressDto findById(@PathVariable UUID id) throws AddressNotFoundException {
+    @GetMapping("/getById")
+    public AddressDto findById(@RequestParam("id") UUID id) throws AddressNotFoundException {
         return addressService.findById(id);
     }
 
@@ -75,9 +75,9 @@ public class AddressController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws AddressNotFoundException {
+    public void deleteById(@RequestParam ("id") UUID id) throws AddressNotFoundException {
         addressService.deleteById(id);
     }
 }

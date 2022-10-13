@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.io.Console;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -20,9 +19,9 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderDto implements Serializable {
+public class InvoiceDto implements Serializable {
 
-    @Schema(description = "id customer", example = "74478911-6424-47a7-911c-0daa262144fa")
+    @Schema(description = "id invoice", example = "74478911-6424-47a7-911c-0daa262144fa")
     private UUID id;
 
     @Schema(description = "Invoice number, max length 30", example = "INV0000321")

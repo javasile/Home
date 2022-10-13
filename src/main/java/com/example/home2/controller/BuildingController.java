@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("building")
+@RequestMapping("/building")
 public class BuildingController {
 
     private final BuildingService buildingService;
@@ -39,8 +39,8 @@ public class BuildingController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public BuildingDto findById(@PathVariable UUID id) throws BuildingNotFoundException {
+    @GetMapping("/getById")
+    public BuildingDto findById(@RequestParam("id") UUID id) throws BuildingNotFoundException {
         return buildingService.findById(id);
     }
 
@@ -75,9 +75,9 @@ public class BuildingController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws BuildingNotFoundException {
+    public void deleteById(@RequestParam("id") UUID id) throws BuildingNotFoundException {
         buildingService.deleteById(id);
     }
 }

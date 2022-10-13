@@ -1,9 +1,9 @@
 package com.example.home2.repository;
 
-import com.example.home2.model.Order;
+import com.example.home2.model.Invoice;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface OrderRepository extends JpaRepository<Order, UUID> {
+public interface InvoiceRepository extends JpaRepository<Invoice, UUID> {
 }

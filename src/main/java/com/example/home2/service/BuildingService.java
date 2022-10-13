@@ -45,7 +45,7 @@ public class BuildingService {
     }
 
     private void checkIfIdIsEmpty(BuildingDto buildingDto) {
-        if (buildingDto.getId() != null)
+        if (buildingDto.getId() == null)
             throw new InvalidUUIDException();
     }
 

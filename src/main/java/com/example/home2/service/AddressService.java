@@ -44,7 +44,7 @@ public class AddressService {
     }
 
     private void checkIfIdIsEmpty(AddressDto addressDto) {
-        if (addressDto.getId() != null)
+        if (addressDto.getId() == null)
             throw new InvalidUUIDException();
     }
 

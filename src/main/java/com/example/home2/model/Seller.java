@@ -24,6 +24,9 @@ public class Seller {
     @Column(columnDefinition = "BINARY(16)")
     private UUID id;
 
+//    @Column(columnDefinition = "field default false")
+//    private boolean isCompany;
+
     @Column(length = 20)
     @NotNull
     @NotBlank

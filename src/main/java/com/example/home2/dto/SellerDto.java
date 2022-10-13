@@ -10,7 +10,6 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,10 +18,13 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SellerDto implements Serializable {
+public class SellerDto {
 
     @Schema(description = "id contact", example = "24478911-6424-47a7-911c-0daa262144ya")
     private UUID id;
+
+//    @Schema(description = "field, true if is active,", example = "1")
+//    private boolean isCompany;
 
     @Length(max = 20)
     @NotNull

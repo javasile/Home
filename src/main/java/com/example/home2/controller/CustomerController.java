@@ -39,8 +39,8 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public CustomerDto findById(@PathVariable UUID id) throws CustomerNotFoundException {
+    @GetMapping("/getById")
+    public CustomerDto findById(@RequestParam("id") UUID id) throws CustomerNotFoundException {
         return customerService.findById(id);
     }
 
@@ -75,9 +75,9 @@ public class CustomerController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws CustomerNotFoundException {
+    public void deleteById(@RequestParam ("id") UUID id) throws CustomerNotFoundException {
         customerService.deleteById(id);
     }
 }

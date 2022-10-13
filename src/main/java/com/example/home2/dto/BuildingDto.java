@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Min;
-import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,7 +18,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BuildingDto implements Serializable {
+public class BuildingDto {
 
     @Schema(description = "id building", example = "1c263004-6df9-4879-a3d9-9baf22ccdc18")
     private UUID id;

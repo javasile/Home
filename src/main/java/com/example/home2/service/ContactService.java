@@ -43,7 +43,7 @@ public class ContactService {
     }
 
     private void checkIfIdIsEmpty(ContactDto contactDto) {
-        if (contactDto.getId() != null)
+        if (contactDto.getId() == null)
             throw new InvalidUUIDException();
     }
 

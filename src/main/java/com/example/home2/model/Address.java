@@ -1,5 +1,6 @@
 package com.example.home2.model;
 
+import com.example.home2.model.Seller;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 

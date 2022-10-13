@@ -20,5 +20,4 @@ public interface CustomerMapper {
 //            @Mapping(source = "company",target = "isCompany")
 //    })
     Customer dtoToModel(CustomerDto customerDto);
-
 }

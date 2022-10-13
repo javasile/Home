@@ -44,7 +44,7 @@ public class CustomerService {
     }
 
     private void checkIfIdIsEmpty(CustomerDto customerDto) {
-        if (customerDto.getId() != null)
+        if (customerDto.getId() == null)
             throw new InvalidUUIDException();
     }
 

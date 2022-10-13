@@ -15,9 +15,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -45,7 +47,7 @@ public class BuildingControllerTest {
                     .constructionYear("1990")
                     .price(100556.56)
                     .category(Category.VILLA)
-                    .addressList(null)
+                    .addresses(new ArrayList<>())
                     .build();
             buildingRepository.deleteAll();
             building = buildingRepository.save(building);
@@ -60,7 +62,7 @@ public class BuildingControllerTest {
                     .constructionYear("1990")
                     .price(100556.56)
                     .category(Category.VILLA)
-                    .addresses(null)
+                    .addresses(new ArrayList<>())
                     .build();
             mvc.perform(get("/building")
                             .contentType(MediaType.APPLICATION_JSON))

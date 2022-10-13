@@ -38,8 +38,8 @@ public class ContactController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public ContactDto findById(@PathVariable UUID id) throws ContactNotFoundException {
+    @GetMapping("/getById")
+    public ContactDto findById(@RequestParam("id") UUID id) throws ContactNotFoundException {
         return contactService.findById(id);
     }
 
@@ -74,9 +74,9 @@ public class ContactController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws ContactNotFoundException {
+    public void deleteById(@RequestParam("id") UUID id) throws ContactNotFoundException {
         contactService.deleteById(id);
     }
 }

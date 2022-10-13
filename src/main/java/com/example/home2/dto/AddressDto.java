@@ -11,7 +11,6 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +19,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDto implements Serializable {
+public class AddressDto {
 
     @Schema(description = "id addess", example = "74478911-6424-47a7-911c-0daa262144fa")
     private UUID id;

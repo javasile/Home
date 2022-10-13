@@ -39,8 +39,8 @@ public class SellerController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @GetMapping("{id}")
-    public SellerDto findById(@PathVariable UUID id) throws SellerNotFoundException {
+    @GetMapping("/getById")
+    public SellerDto findById(@RequestParam("id") UUID id) throws SellerNotFoundException {
         return sellerService.findById(id);
     }
 
@@ -75,9 +75,9 @@ public class SellerController {
             @ApiResponse(responseCode = "500", description = "Internal error")
     }
     )
-    @DeleteMapping("{id}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable UUID id) throws SellerNotFoundException {
+    public void deleteById(@RequestParam("id") UUID id) throws SellerNotFoundException {
         sellerService.deleteById(id);
     }
 }

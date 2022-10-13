@@ -41,8 +41,8 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(e.getMessage(), BAD_REQUEST);
     }
 
-    @ExceptionHandler(OrderNotFoundException.class)
-    public ResponseEntity<Object> handleManufacturerNotFoundException(OrderNotFoundException e) {
+    @ExceptionHandler(InvoiceNotFoundException.class)
+    public ResponseEntity<Object> handleManufacturerNotFoundException(InvoiceNotFoundException e) {
         return new ResponseEntity<>(e.getMessage(), NOT_FOUND);
     }
 

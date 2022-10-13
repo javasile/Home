@@ -44,7 +44,7 @@ public class SellerService {
     }
 
     private void checkIfIdIsEmpty(SellerDto sellerDto) {
-        if (sellerDto.getId() != null)
+        if (sellerDto.getId() == null)
             throw new InvalidUUIDException();
     }
 

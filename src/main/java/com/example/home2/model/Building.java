@@ -43,5 +43,5 @@ public class Building {
             joinColumns = @JoinColumn(name = "building_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id")
     )
-    private List<Address> addressList;
+    private List<Address> addresses;
 }
